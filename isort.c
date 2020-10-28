@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
 int N;
 
 void isort (int arr[]){
@@ -16,14 +15,9 @@ void isort (int arr[]){
 }
 
 int main(){
-	N = 6;
 	int i;
-	int array[N];
-	int a;
-	for (i = 0; i < N; i++) {
-		a = rand() % 100;
-		array[i] = a;
-	}
+	int array[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8};
+	N = sizeof(array)/sizeof(int);
 	for (i = 0; i < N; i++){
 		printf("%d, ", array[i]);
 	}
