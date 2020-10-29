@@ -6,7 +6,7 @@ void merge(int arr[], int p, int q, int r){
 	int i, j;
 	int n = q - p + 1;
 	int m = r - q;
-	int L[n], R[m];
+	int L[n+1], R[m+1];
 	for (i = 0; i < n; i++){
 		L[i] = arr[p + i];
 	}
@@ -18,7 +18,7 @@ void merge(int arr[], int p, int q, int r){
 
 	i = 0;
 	j = 0;
-	for(int k = p; k < r; k++){
+	for(int k = p; k <= r; k++){
 		if(L[i] <= R[j]){
 			arr[k] = L[i];
 			i++;
@@ -47,7 +47,7 @@ int main(){
 		printf("%d, ", A[i]);
 	}
 	printf("\n\n");
-	merge_sort(A, 0, N);
+	merge_sort(A, 0, N-1);
 	for (int i = 0; i < N; i++){
 		printf("%d, ", A[i]);
 	}
