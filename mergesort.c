@@ -30,7 +30,7 @@ void merge(int arr[], int p, int q, int r){
 	}
 }
 
-void merge_sort(int arr[], int p, int r){
+void merge_sort(int arr[], int p, int r) {
 	if (p < r){
 		int q = p + (r - p) / 2;
 		merge_sort(arr, p, q);

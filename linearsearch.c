@@ -1,23 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 int N;
 
-int lsearch (int v, int arr[]){
+int lsearch (int v, int arr[], int size){
 	for (int i = 0; i < N; i++) {
-		if(v == arr[i]) { return v; }
+		if(v == arr[i]) {printf("True\n"); return 1; }
 		}
 	printf("False\n");
 	return 0;
 }
 
-int main(){
-	N = 5;
-	int a[N];
-	a[0] = 4;
-	a[1] = 3;
-	a[2] = 10;
-	a[3] = 11;
-	a[4] = 5;
-	int ans = lsearch(11, a);
-	printf("%d\n", ans);
+int main(int argc, char *argv[]){
+	int a[] = {34,12,56,3,18,10,2,3,1};
+	int n = atoi(argv[1]);
+	N = sizeof(a)/sizeof(int);
+	lsearch(n, a, N);
 	return 0;
 }
