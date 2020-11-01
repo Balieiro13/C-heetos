@@ -3,7 +3,7 @@
 
 int binarysrc(int arr[], int v, int l, int m, int r)
 {
-	while (l < r){
+	if (l < r) {
 		if (v == arr[m] || v == arr[l] || v == arr[r])
 			return 0;
 

@@ -11,10 +11,11 @@ int mdc(int n, int d)
 
 int main(int argc, char *argv[])
 {
-	int a, b;
+	int a, b, c, d;
 	a = atoi(argv[1]);
 	b = atoi(argv[2]);
-
-	printf("O mdc de %d e %d é %d\n", a, b, mdc(a,b));
+	c = atoi(argv[3]);
+	
+	printf("%d\n", mdc(mdc(a,b),c));
 	return 0;
 }
