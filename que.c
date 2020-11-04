@@ -19,6 +19,11 @@ struct Queue* newQ(int size)
 }
 
 
+int isEmpty(struct Queue *p)
+{
+	return p->tail > p->head;
+}
+
 int next(struct Queue *p)
 {
 	return p->items[p->tail];
