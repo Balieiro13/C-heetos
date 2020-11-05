@@ -19,30 +19,25 @@ struct Queue* newQ(int size)
 }
 
 
-int isEmpty(struct Queue *p)
-{
+int isEmpty(struct Queue *p){
 	return p->tail > p->head;
 }
 
-int next(struct Queue *p)
-{
+int next(struct Queue *p){
 	return p->items[p->tail];
 }
 
-void enQ(struct Queue *p, int x)
-{
+void enQ(struct Queue *p, int x){
 	p->items[++p->head] = x;
 }
 
-int denQ(struct Queue *p)
-{
+int denQ(struct Queue *p){
 	int q = p->items[p->tail];
 	++p->tail;
 	return q;
 }
 
-void print(struct Queue *p)
-{
+void print(struct Queue *p){
 	for (int i = p->tail; i <= p->head; i++)
 		printf("%d ", p->items[i]);
 	printf("\n");

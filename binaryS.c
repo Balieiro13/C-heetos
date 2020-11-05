@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 int binaryS(int arr[], int v, int l, int m, int r)
 {
     if (l < r) {

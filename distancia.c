@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "que.c"
+#include "Queue.c"
 
 void dist(int c, int rede[6][6], int sz)
 {
