@@ -5,7 +5,7 @@ int N;
 
 int lsearch (int v, int arr[], int size){
 	for (int i = 0; i < N; i++) {
-		if(v == arr[i]) {printf("True\n"); return 1; }
+	    if(v == arr[i]) {printf("True\n"); return 1; }
 		}
 	printf("False\n");
 	return 0;
