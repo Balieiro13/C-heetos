@@ -4,27 +4,27 @@
 
 int main()
 {
-	struct Queue *q = newQ(100);
+    struct Queue *q = newQ(100);
 
-	if (isEmpty(q))
-		printf("vazio!\n");
+    if (isEmpty(q))
+        printf("vazio!\n");
 
-	enQ(q, 5);
-	enQ(q, 7);
-	enQ(q, 9);
-	enQ(q, 11);
+    enQ(q, 5);
+    enQ(q, 7);
+    enQ(q, 9);
+    enQ(q, 11);
 
-	print(q);
+    print(q);
 
-	if (!isEmpty(q))
-		printf("n vazio\n");
-	denQ(q);
-	denQ(q);
-	denQ(q);
-	print(q);
-	if (isEmpty(q))
-		printf("vazio!\n");
-	
+    if (!isEmpty(q))
+        printf("n vazio\n");
+    denQ(q);
+    denQ(q);
+    denQ(q);
+    print(q);
+    if (isEmpty(q))
+        printf("vazio!\n");
 
-	return 0;
+
+    return 0;
 }

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-int binaryS(int arr[], int v, int l, int r)
+int binaryS(int *arr, int v, int l, int r)
 {
 	if (l <= r) {
 		int m = l + (r - l)/2;
@@ -20,12 +20,17 @@ int binaryS(int arr[], int v, int l, int r)
 
 int main()
 {
-	int a[] = {1,2,3,4,5,6,7,8};
-	int n = sizeof(a)/sizeof(int);
-	int x = 5;
-	int index = binaryS(a, x, 0, (n-1));
+    int *a = (int*)malloc(sizeof(int)*10);
+    for (int i = 0; i < 10; i ++)
+        a[i] = 2*i + 1;
+    int *q = (int*)malloc(sizeof(int)*10);
+    for (int h = 0; h < 10; h++)
+        q[h] = h*h + 1;
 
-	printf("index: %d\n", index);
+	int n = sizeof(a)/sizeof(int);
+	int index = binaryS(a, q[2], 0, 9);
+
+	printf("index: %d\n", a[index]);
 
 	return 0;
 }
