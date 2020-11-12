@@ -4,10 +4,10 @@ int N;
 
 void merge(int arr[], int p, int q, int r)
 {
-    int i, j;
+    int i, j, k;
     int n = q - p + 1;
     int m = r - q;
-    int L[n + 1], R[m + 1];
+    int L[n], R[m];
 
     for (i = 0; i < n; i++){
         L[i] = arr[p + i];
@@ -15,20 +15,30 @@ void merge(int arr[], int p, int q, int r)
     for (j = 0; j < m; j++){
         R[j] = arr[q + 1 + j];
     }
-    L[n] = 100;
-    R[m] = 100;
 
-    i = 0;
-    j = 0;
-    for (int k = p; k <= r; k++){
+    i = 0, j = 0, k = p;
+    while (i < n && j < m){
         if (L[i] <= R[j]){
             arr[k] = L[i];
             i++;
-        } else {
+        } else{
             arr[k] = R[j];
             j++;
         }
+        k++;
     }
+
+    while(i < n){
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+    while(j < m){
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+
 }
 
 void merge_sort(int arr[], int p, int r)
