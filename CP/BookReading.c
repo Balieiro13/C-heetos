@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #define ll long long
 
+int mdc(int n, int d)
+{
+    if (d == 0)
+        return n;
+
+    return mdc(d, n%d);
+}
+
 ll int solve(ll int n, ll int m)
 {
     ll int  k, j, l = (n - n % m) / m, ans = 0;
@@ -9,11 +17,11 @@ ll int solve(ll int n, ll int m)
     j = m % 10;
     if (j == 0)
         return 0;
-        if (j == 1 || j == 3 || j == 7 || j == 9){
+        if (mdc(10, j) == 1){
         ans = 45;
         i = 10;
     }
-    if (j == 2 || j == 4 || j == 6 || j == 8){
+    if (mdc(10,j) == 2){
         ans = 20;
         i = 5;
     }
