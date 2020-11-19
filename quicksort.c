@@ -1,16 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int mch(int *lst, int e, int d)
+void swap(int *a, int *b){
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int pivo(int *lst, int e, int d)
 {
     int i = e - 1, j, key;
     int x = lst[d-1];
     for (j = e; j < d; j++){ 
         if (lst[j] <= x){
            i++;
-           key = lst[j];
-           lst[j] = lst[i];
-           lst[i] = key;
+           swap(&lst[j], &lst[i]);
        }
     }
     return i;
@@ -18,27 +22,25 @@ int mch(int *lst, int e, int d)
 
 void ordena (int *lst, int l, int r)
 {
-    if (l >= r - 1) return;
-    int m = mch(lst, l, r);
-    ordena(lst, l, m);
-    ordena(lst, m+1, r);
-}
-
-void quicksort(int *lst, int size){
-    ordena(lst, 0, size);
+    if (l < r){
+        int m = pivo(lst, l, r);
+        ordena(lst, l, m);
+        ordena(lst, m+1, r);
+    }
 }
 
 int main()
 {
-    int v[10] = {99, 33, 55, 77, 11, 22, 88, 66, 33, 44};
+    int v[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 4, 7, 9, 3, 2, 3, 8};
+    int n = sizeof(v)/sizeof(int);
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < n; i++)
         printf("%d ", v[i]);
     printf("\n");
 
-    quicksort(v, 10);
+    ordena(v, 0, n);
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < n; i++)
         printf("%d ", v[i]);
     printf("\n");
     return 0;
