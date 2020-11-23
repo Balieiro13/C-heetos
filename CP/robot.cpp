@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 #include <tuple>
 using namespace std;
 
@@ -88,3 +89,28 @@ int main()
 //        }
 //    }
 //}
+=======
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--){
+        int x, y, ans;
+        cin >> x >> y;
+        if(x >= y){
+            x -= y;
+            if (x == 0)
+                ans = 2*y;
+            else
+                ans = 2 * y + 2 * (x - 1) + 1;
+        } else {
+            y -= x;
+            ans = 2 * x + 2 * (y - 1) + 1;
+        }
+        cout << ans << endl;
+    }
+    return 0;
+}
+>>>>>>> af9a1fe1cee6ba796e4c64cc83c9817898d3d1d5
